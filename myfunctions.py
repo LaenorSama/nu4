@@ -12,11 +12,11 @@ def simple_separator():
     Функция создает красивый резделитель из 10-и звездочек (**********)
     :return: **********
     """
-    return '**********'
+    return separator('*', 10)
     # pass
 
-
-print(simple_separator() == '**********')  # True
+# все тесты перенес в конец кода, так как функции используют другие функции
+# print(simple_separator() == '**********')  # True
 
 
 def long_separator(count):
@@ -25,27 +25,27 @@ def long_separator(count):
     :param count: количество звездочек
     :return: строка разделитель, примеры использования ниже
     """
-    return '*' * count
+    return separator('*', count)
     # pass
 
 
-print(long_separator(3) == '***')  # True
-print(long_separator(4) == '****')  # True
+# print(long_separator(3) == '***')  # True
+# print(long_separator(4) == '****')  # True
 
 
-def separator(simbol, count):
+def separator(symbol, count):
     """
     Функция создает разделитель из любых символов любого количества
     :param simbol: символ разделителя
     :param count: количество повторений
     :return: строка разделитель примеры использования ниже
     """
-    return simbol * count
+    return symbol * count
     # pass
 
 
-print(separator('-', 10) == '----------')  # True
-print(separator('#', 5) == '#####')  # True
+# print(separator('-', 10) == '----------')  # True
+# print(separator('#', 5) == '#####')  # True
 
 
 def hello_world():
@@ -58,22 +58,17 @@ def hello_world():
     ##########
     :return: None
     """
-    print('**********')
-    print()
-    print('Hello World!')
-    print()
-    print('##########')
+    hello_who()
     # pass
 
-
-'''
-**********
-
-Hello World!
-
-##########
-'''
-hello_world()
+# '''
+# **********
+#
+# Hello World!
+#
+# ##########
+# '''
+# hello_world()
 
 
 def hello_who(who='World'):
@@ -95,30 +90,30 @@ def hello_who(who='World'):
     # pass
 
 
-'''
-**********
-
-Hello World!
-
-##########
-'''
-hello_who()
-'''
-**********
-
-Hello Max!
-
-##########
-'''
-hello_who('Max')
-'''
-**********
-
-Hello Kate!
-
-##########
-'''
-hello_who('Kate')
+# '''
+# **********
+#
+# Hello World!
+#
+# ##########
+# '''
+# hello_who()
+# '''
+# **********
+#
+# Hello Max!
+#
+# ##########
+# '''
+# hello_who('Max')
+# '''
+# **********
+#
+# Hello Kate!
+#
+# ##########
+# '''
+# hello_who('Kate')
 
 
 def pow_many(power, *args):
@@ -132,11 +127,11 @@ def pow_many(power, *args):
     # pass
 
 
-print(pow_many(1, 1, 2) == 3)  # True -> (1 + 2)**1 == 3
-print(pow_many(1, 2, 3) == 5)  # True -> (2 + 3)**1 == 5
-print(pow_many(2, 1, 1) == 4)  # True -> (1 + 1)**2 == 4
-print(pow_many(3, 2) == 8)  # True -> 2**3 == 8
-print(pow_many(2, 1, 2, 3, 4) == 100)  # True -> (1 + 2 + 3 + 4)**2 == 10**2 == 100
+# print(pow_many(1, 1, 2) == 3)  # True -> (1 + 2)**1 == 3
+# print(pow_many(1, 2, 3) == 5)  # True -> (2 + 3)**1 == 5
+# print(pow_many(2, 1, 1) == 4)  # True -> (1 + 1)**2 == 4
+# print(pow_many(3, 2) == 8)  # True -> 2**3 == 8
+# print(pow_many(2, 1, 2, 3, 4) == 100)  # True -> (1 + 2 + 3 + 4)**2 == 10**2 == 100
 
 
 def print_key_val(**kwargs):
@@ -152,16 +147,16 @@ def print_key_val(**kwargs):
     # pass
 
 
-"""
-name --> Max
-age --> 21
-"""
-print_key_val(name='Max', age=21)
-"""
-animal --> Cat
-is_animal --> True
-"""
-print_key_val(animal='Cat', is_animal=True)
+# """
+# name --> Max
+# age --> 21
+# """
+# print_key_val(name='Max', age=21)
+# """
+# animal --> Cat
+# is_animal --> True
+# """
+# print_key_val(animal='Cat', is_animal=True)
 
 
 def my_filter(iterable, function):
@@ -181,7 +176,30 @@ def my_filter(iterable, function):
     return result
     # pass
 
+# print(my_filter([1, 2, 3, 4, 5], lambda x: x > 3) == [4, 5])  # True
+# print(my_filter([1, 2, 3, 4, 5], lambda x: x == 2) == [2])  # True
+# print(my_filter([1, 2, 3, 4, 5], lambda x: x != 3) == [1, 2, 4, 5])  # True
+# print(my_filter(['a', 'b', 'c', 'd'], lambda x: x in 'abba') == ['a', 'b'])  # True
 
+
+
+# вот и все проверки
+print(simple_separator() == '**********')  # True
+print(long_separator(3) == '***')  # True
+print(long_separator(4) == '****')  # True
+print(separator('-', 10) == '----------')  # True
+print(separator('#', 5) == '#####')  # True
+hello_world()
+hello_who()
+hello_who('Max')
+hello_who('Kate')
+print(pow_many(1, 1, 2) == 3)  # True -> (1 + 2)**1 == 3
+print(pow_many(1, 2, 3) == 5)  # True -> (2 + 3)**1 == 5
+print(pow_many(2, 1, 1) == 4)  # True -> (1 + 1)**2 == 4
+print(pow_many(3, 2) == 8)  # True -> 2**3 == 8
+print(pow_many(2, 1, 2, 3, 4) == 100)  # True -> (1 + 2 + 3 + 4)**2 == 10**2 == 100
+print_key_val(name='Max', age=21)
+print_key_val(animal='Cat', is_animal=True)
 print(my_filter([1, 2, 3, 4, 5], lambda x: x > 3) == [4, 5])  # True
 print(my_filter([1, 2, 3, 4, 5], lambda x: x == 2) == [2])  # True
 print(my_filter([1, 2, 3, 4, 5], lambda x: x != 3) == [1, 2, 4, 5])  # True
