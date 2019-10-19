@@ -42,6 +42,8 @@ def donate_func():
     # небольшая защита от дурака
     if gold >= 0:
         user_wallet += gold
+        print('Пополнение успешно.')
+        print('Возврат в основное меню.')
         return ['пополнение', gold, 'остаток на счете', user_wallet]
     else:
         print('Ошибка!!! Нельзя пополнить на неположительное число!!!')
@@ -56,9 +58,12 @@ def purchase_func():
     item_cost = int(input('Введите стоимость покупки:'))
     if user_wallet >= item_cost:
         user_wallet -= item_cost
+        print('Покупка успешна!')
+        print('Возврат в основное меню.')
         return ['покупка', item_name, item_cost, 'остаток на счете', user_wallet]
     else:
         print('Нужно больше золота!')
+        print('Возврат в основное меню.')
         return ['ОТКАЗ В ПОКУПКЕ', item_name, item_cost, 'остаток на счете', user_wallet]
 
 
@@ -66,9 +71,12 @@ def purchase_func():
 def print_actions(action_list):
     if len(action_list) == 0:
         print('Вы не произвели ниодной операции.')
+        print('Возврат в основное меню.')
     else:
         for i in range(len(action_list)):
+            print('Ваши операции:')
             print(action_list[i])
+            print('Возврат в основное меню.')
 
 
 # 4. выход из меню. тут обойдемся без функции
